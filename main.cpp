@@ -30,8 +30,8 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-    srand(time(NULL));
-    vector<int> parsed = parse(argc, argv);
+    srand(time(NULL));//seeding random for gaussian
+    vector<int> parsed = parse(argc, argv);//for storing settings
     double temp;
 
     /*
@@ -41,26 +41,26 @@ int main(int argc, char** argv)
     }
     */
 
-    if(parsed.at(4))
+    if(parsed.at(4))//if -f flag was used for file output
     {
         ofstream outputFile;
-        outputFile.open("output.txt");
-        for(int i = 0; i < parsed.at(2); i++)
+        outputFile.open("output.txt");//opening file
+        for(int i = 0; i < parsed.at(2); i++)//for every number
         {
-            temp = gaussian(parsed.at(0),parsed.at(1));
+            temp = gaussian(parsed.at(0),parsed.at(1));//generate a random gaussian number
 
-            if(parsed.at(3))
+            if(parsed.at(3))//if -p flag
             {
-                temp = round(temp);
+                temp = round(temp);//round
             }
 
-            outputFile << temp << endl;
+            outputFile << temp << endl;//append temp to file, followed by newline
         }
         outputFile.close();
     }
     else
     {
-        for(int i = 0; i < parsed.at(2); i++)
+        for(int i = 0; i < parsed.at(2); i++)//same as last time
         {
             temp = gaussian(parsed.at(0),parsed.at(1));
 
@@ -69,7 +69,7 @@ int main(int argc, char** argv)
                 temp = round(temp);
             }
 
-            cout << temp << endl;
+            cout << temp << endl;//just outputting here instead of to file
         }
     }
 
