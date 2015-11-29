@@ -20,6 +20,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
+#include <cmath>
 
 #include "parse.h"
 #include "gaussian.h"
@@ -30,6 +31,7 @@ int main(int argc, char** argv)
 {
     srand(time(NULL));
     vector<int> parsed = parse(argc, argv);
+    double temp;
 
     /*
     for(int i = 0; i < parsed.size(); i++)
@@ -40,7 +42,14 @@ int main(int argc, char** argv)
 
     for(int i = 0; i < parsed.at(2); i++)
     {
-        cout << gaussian(parsed.at(0),parsed.at(1),parsed.at(3)) << endl;
+        temp = gaussian(parsed.at(0),parsed.at(1),parsed.at(3));
+
+        if(parsed.at(3))
+        {
+            temp = round(temp);
+        }
+        
+        cout << temp << endl;
     }
 
     return 0;
