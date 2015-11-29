@@ -21,6 +21,7 @@
 #include <cstring>
 
 #include "parse.h"
+#include "random.h"
 
 using namespace std;
 
