@@ -21,6 +21,7 @@
 #include <cstring>
 #include <ctime>
 #include <cmath>
+#include <fstream>
 
 #include "parse.h"
 #include "gaussian.h"
@@ -40,16 +41,36 @@ int main(int argc, char** argv)
     }
     */
 
-    for(int i = 0; i < parsed.at(2); i++)
+    if(parsed.at(4))
     {
-        temp = gaussian(parsed.at(0),parsed.at(1),parsed.at(3));
-
-        if(parsed.at(3))
+        ofstream outputFile;
+        outputFile.open("output.txt");
+        for(int i = 0; i < parsed.at(2); i++)
         {
-            temp = round(temp);
+            temp = gaussian(parsed.at(0),parsed.at(1),parsed.at(3));
+
+            if(parsed.at(3))
+            {
+                temp = round(temp);
+            }
+
+            outputFile << temp << endl;
         }
-        
-        cout << temp << endl;
+        outputFile.close();
+    }
+    else
+    {
+        for(int i = 0; i < parsed.at(2); i++)
+        {
+            temp = gaussian(parsed.at(0),parsed.at(1),parsed.at(3));
+
+            if(parsed.at(3))
+            {
+                temp = round(temp);
+            }
+
+            cout << temp << endl;
+        }
     }
 
     return 0;
