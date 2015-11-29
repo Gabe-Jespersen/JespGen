@@ -19,6 +19,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include <ctime>
 
 #include "parse.h"
 #include "gaussian.h"
@@ -27,6 +28,7 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
+    srand(time(NULL));
     vector<int> parsed = parse(argc, argv);
 
     /*

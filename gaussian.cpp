@@ -27,10 +27,8 @@ using namespace std;
 
 double gaussian(int base, int standardDeviation, int decimalPlaces)
 {
-    srand(time(0));
-
-    double u1 = rand()/RAND_MAX;
-    double u2 = rand()/RAND_MAX;
+    double u1 = (1.0+rand())/(1.0+RAND_MAX);
+    double u2 = (1.0+rand())/(1.0+RAND_MAX);
 
     double answer = cos(8.*atan(1.)*u2)*sqrt(-2.*log(u1));
     answer *= standardDeviation;
