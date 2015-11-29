@@ -50,7 +50,7 @@ vector<int> parse(int argc, char** argv)
                 cout << "\t-b: base number, where the numbers center\n" <<
                         "\t-d: standard deviation\n" <<
                         "\t-a: amount of numbers generated\n" <<
-                        "\t-p: decimal places to generate to\n" <<
+                        "\t-p: round to nearest whole number\n" <<
                         "\t-f: generate numbers to a file\n";
                 exit(2);
             }
@@ -69,10 +69,9 @@ vector<int> parse(int argc, char** argv)
                 amount = atoi(argv[i+1]);
                 i++;
             }
-            else if(!strcmp(argv[i], "-p") && argc > i)
+            else if(!strcmp(argv[i], "-p"))
             {
-                decimalPlaces = atoi(argv[i+1]);
-                i++;
+                decimalPlaces = 1;
             }
             else if(!strcmp(argv[i], "-f"))
             {
