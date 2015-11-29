@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -g -std=c++11 -Wall
+CFLAGS = -O2 -std=c++11 -Wall
 INSTALLPATH = ./
 EXECUTABLE = jespgen
 

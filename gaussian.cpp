@@ -25,7 +25,7 @@
 
 using namespace std;
 
-double gaussian(int base, int standardDeviation, int decimalPlaces)
+double gaussian(int base, int standardDeviation)
 {
     double u1 = (1.0+rand())/(1.0+RAND_MAX);
     double u2 = (1.0+rand())/(1.0+RAND_MAX);

@@ -36,7 +36,6 @@ vector<int> parse(int argc, char** argv)
     if(argc < 2)
     {
         cout << "Run the program with the -h flag\n";
-        cout << "Exit code: 1\n";
         exit(1);
     }
     

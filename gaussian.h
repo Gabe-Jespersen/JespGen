@@ -19,6 +19,6 @@
 #ifndef GAUSSIAN_H
 #define GAUSSIAN_H
 
-double gaussian(int,int,int);
+double gaussian(int,int);
 
 #endif

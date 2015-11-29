@@ -47,7 +47,7 @@ int main(int argc, char** argv)
         outputFile.open("output.txt");
         for(int i = 0; i < parsed.at(2); i++)
         {
-            temp = gaussian(parsed.at(0),parsed.at(1),parsed.at(3));
+            temp = gaussian(parsed.at(0),parsed.at(1));
 
             if(parsed.at(3))
             {
@@ -62,7 +62,7 @@ int main(int argc, char** argv)
     {
         for(int i = 0; i < parsed.at(2); i++)
         {
-            temp = gaussian(parsed.at(0),parsed.at(1),parsed.at(3));
+            temp = gaussian(parsed.at(0),parsed.at(1));
 
             if(parsed.at(3))
             {
