@@ -33,15 +33,16 @@ vector<int> parse(int argc, char** argv)
     int toFile = 0;
     int decimalPlaces = 0;
 
-    if(argc = 0)
+    if(argc < 2)
     {
         cout << "Run the program with the -h flag\n";
         cout << "Exit code: 1\n";
         exit(1);
     }
+    
     else
     {
-        for(int i = 0; i <= argc; i++)
+        for(int i = 1; i < argc; i++)
         {
             if     (!strcmp(argv[i], "-h"))
             {
@@ -50,8 +51,7 @@ vector<int> parse(int argc, char** argv)
                         "\t-d: standard deviation\n" <<
                         "\t-a: amount of numbers generated\n" <<
                         "\t-p: decimal places to generate to\n" <<
-                        "\t-f: generate numbers to a file\n\n";
-                cout << "Exit code: 2\n";
+                        "\t-f: generate numbers to a file\n";
                 exit(2);
             }
             else if(!strcmp(argv[i], "-b") && argc > i)
