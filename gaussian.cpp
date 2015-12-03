@@ -31,7 +31,13 @@ double gaussian(int base, int standardDeviation)
     double u1 = (1.0+rand())/(1.0+RAND_MAX);//generating 2 linearly random numbers between 1 & 0
     double u2 = (1.0+rand())/(1.0+RAND_MAX);
 
-    double answer = cos(8.*atan(1.)*u2)*sqrt(-2.*log(u1));//uses the box-muller transformation
+    double answer = cos(8.0*atan(1.0)*u2)*sqrt(-2.0*log(u1));//uses the box- 
+                                                             //muller transfor-
+                                                             //mation
+ 
+                                                             //using decimals 
+                                                             //to force it to
+                                                             //be a float
     answer *= standardDeviation;//multiplies the value by the standard deviation
     answer += base;//adds the base
     return answer;
