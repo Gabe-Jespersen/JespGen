@@ -37,8 +37,14 @@ vector<int> parse(int argc, char** argv)
 
     if(argc < 2)//if there isn't any arguments
     {
-        cout << "Run the program with the -h flag\n";
-        exit(1);
+        cout << "Options\n";
+        cout << "\t-h: displays this help menu\n" <<
+                "\t-b: base number, where the numbers center\n" <<
+                "\t-d: standard deviation\n" <<
+                "\t-a: amount of numbers generated\n" <<
+                "\t-p: round to nearest whole number\n" <<
+                "\t-f: generate numbers to a file\n";
+        exit(2);
     }
     
     else
@@ -48,7 +54,7 @@ vector<int> parse(int argc, char** argv)
             if     (!strcmp(argv[i], "-h"))//ugly way of checking, but will be used over
                                            //and over, so get used to it
             {
-                cout << "\nOptions\n";
+                cout << "Options\n";
                 cout << "\t-b: base number, where the numbers center\n" <<
                         "\t-d: standard deviation\n" <<
                         "\t-a: amount of numbers generated\n" <<
